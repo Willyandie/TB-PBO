@@ -5,12 +5,11 @@ def main():
     if (validasi == "login"):
         email = str(input("Email = "))
         password = str(input("Password = "))
-        pass
     else:
         # Menuju Halaman  Register
         pass
 
-    return 0
+    return
 
 if __name__ == '__main__':
     main()
