@@ -31,9 +31,61 @@ def main():
             validasi = int(input("Silakan input (1/2/3) = "))
             while (validasi != 3):
                 if (validasi == 1):
-                    # email = str(input("Email = "))
-                    # password = str(input("Password = "))
-                    pass
+                    Admin = admin()
+                    login_user = False
+                    while(login_user == False):
+                        email = str(input("Email = "))
+                        password = str(input("Password = "))
+                        if (email == "admin" and password == "admin"): # masih gatau cara ngambil dari database
+                            login_user = True
+                            us = login.login(email,password)
+                            print(us.getEmail())
+                            print(us.getPassword()) # ngeprint doang mau liat ke save apa ga
+                            print("Login Berhasil")
+
+                            print("=" * 25)
+                            print("USER HOME PAGE")
+                            print("1. Sewa Kendaraan")
+                            print("2. List Kendaraan")
+                            print("3. Update Profile")
+                            print("4. Logout")
+                            tanya_user = int(input("Fitur nomor (1/2/3/4) = "))
+                            while (tanya_user != 4):
+                                if (tanya_user == 1):
+                                    pass
+                                elif (tanya_user == 2):
+                                    print("=" * 25)
+                                    print("MENAMPILKAN DATA KENDARAAN")
+                                    print("=" * 25)
+                                    Admin.print_data_vechile()
+                                elif (tanya_user == 3):
+                                    print("=" * 25)
+                                    email1 = str(input("Masukan Email: "))
+                                    password1 = str(input("Masukan password: "))
+                                    S2 = login.login(email1, password1)
+                                    print("Email: ", S2.getEmail())
+                                    print("Password: ", S2.getPassword())
+                                    print("Ganti Password YES(1) / NO(2)")
+                                    password2 = int(input(" "))
+                                    if password2 == 2:
+                                        print("Email: ", S2.getEmail())
+                                        print("Password: ", S2.getPassword())
+                                    else:
+                                        oldPass = str(input("masukan Password lama: "))
+                                        newPass = str(input("Masukan Password Baru: "))
+                                        S2.changePassword(oldPass, newPass)
+
+                                print("=" * 25)
+                                print("USER HOME PAGE")
+                                print("1. Sewa Kendaraan")
+                                print("2. List Kendaraan")
+                                print("3. Update Profile")
+                                print("4. Logout")
+                                tanya_user = int(input("Fitur nomor (1/2/3/4) = "))
+                            print("=" * 25)
+                            print("Program Selesai. Terima Kasih")   
+                                
+
                 elif (validasi == 2):
                     Admin = admin()
                     login_admin = False
@@ -49,14 +101,14 @@ def main():
                             print("1. Database User")
                             print("2. Database Kendaraan")
                             print("3. Logout")
-                            tanya = int(input("Fitur nomor (1/2/3) = "))
-                            while (tanya != 3):
-                                if (tanya == 1):
+                            tanya_admin = int(input("Fitur nomor (1/2/3) = "))
+                            while (tanya_admin != 3):
+                                if (tanya_admin == 1):
                                     print("=" * 25)
                                     print("MENAMPILKAN DATA USER")
                                     print("=" * 25)
                                     Admin.print_data_user()
-                                elif (tanya == 2):
+                                elif (tanya_admin == 2):
                                     print("=" * 25)
                                     print("MENAMPILKAN DATA KENDARAAN")
                                     print("=" * 25)
@@ -66,7 +118,7 @@ def main():
                                 print("1. Database User")
                                 print("2. Database Kendaraan")
                                 print("3. Logout")
-                                tanya = int(input("Fitur nomor = (1/2/3) = "))
+                                tanya_admin = int(input("Fitur nomor = (1/2/3) = "))
 
                         else:
                             print("="*25)
@@ -84,7 +136,7 @@ def main():
                 email = str(input(("Email = ")))
                 password = str(input(("Password = ")))
                 gender = str(input(("Gender = ")))
-                addres = str(input(("Addres = ")))
+                addres = str(input(("Address = ")))
                 phone_no = str(input(("Phone Number = ")))
 
                 a = user(identity_number, name, email, password, gender, addres, phone_no)
@@ -114,4 +166,5 @@ def main():
     return
 
 if __name__ == '__main__':
+    import login
     main()
