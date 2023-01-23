@@ -29,6 +29,6 @@ class login:
     def changePassword(self, oldPassword, newPassword):
         if (oldPassword == self.getPassword()):
             self.setPassword(newPassword)
-            print("Password berhasil diganti")
+            print("Password has successfully been changed")
         else:
-            print("Password gagal diganti")
+            print("Password has not been changed")
