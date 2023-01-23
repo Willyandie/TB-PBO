@@ -58,7 +58,7 @@ def main():
                                     print("MENAMPILKAN DATA KENDARAAN")
                                     print("=" * 25)
                                     Admin.print_data_vechile()
-                                elif (tanya_user == 3):
+                                elif (tanya_user == 3):             # ini buat ganti password cuman belom nyambung sama data base
                                     print("=" * 25)
                                     email1 = str(input("Masukan Email: "))
                                     password1 = str(input("Masukan password: "))
