@@ -14,7 +14,7 @@ def main():
 
     dat_1 = user("6210000", "Willy", "willy.ganteng@gmail.com", "123", "Male", "Jl. Suka Jalan", "0810000")
     dat_2 = user("6210001", "Arthur", "arthur.ganteng@gmail.com", "123", "Male", "Jl. Suka Pukul", "0810001")
-    dat_3 = user("6210002", "Bobi", "bobi.ganteng@gmail.com", "123", "Male", "Jl. Suka Terjang", "0810002")
+    dat_3 = user("6210002", "Raafi", "raafi.ganteng@gmail.com", "123", "Male", "Jl. Suka Terbang", "0810002")
     dat_4 = user("6210003", "Bitha", "bitha.cantik@gmail.com", "123", "Female", "Jl. Suka Tidur", "0810003")
     dat_5 = user("6210004", "Lucky", "lucky.ganteng@gmail.com", "123", "Male", "Jl. Suka Silat", "0810004")
 
