@@ -73,15 +73,3 @@ class User:
     @phone_no.setter
     def phone_no(self, value):
         self.__phone_no = value
-
-    # def user_login(self, email, password):
-    #     data_user = "user_database.dat"
-    #     with open(data_user, 'rb') as data:
-    #         users = pickle.load(data)
-    #
-    #     check = False
-    #     for user in users:
-    #         if (email == user.email and password == user.password):
-    #             check = True
-    #             break
-    #     return check

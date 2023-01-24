@@ -42,3 +42,15 @@ class Database:
             print(f"Vechile Type = {history.vehicle_type}")
             print(f"Price = {history.price}")
             print("=" * 25)
+
+    def print_data_survey(self):
+        survey_database = "survey_database.dat"
+
+        with open(survey_database, "rb") as data:
+            surveys = pickle.load(data)
+
+        for survey in surveys:
+            print(f"Nama = {survey.name}")
+            print(f"Rate = {survey.rate}")
+            print(f"Testimoni = {survey.testimoni}")
+            print("=" * 25)

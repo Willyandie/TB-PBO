@@ -3,6 +3,7 @@ from admin import Admin
 from user import User
 from vehicle import Vehicle
 from rental import Rental
+from survey import Survey
 import pickle
 
 def main():
@@ -24,6 +25,11 @@ def main():
     rental_history = "rental_history.dat"
     with open(rental_history, "rb") as data:
         historys = pickle.load(data)
+
+    # Membuka database survey
+    survey_database = "survey_database.dat"
+    with open(survey_database, "rb") as data:
+        surveys = pickle.load(data)
 
     while (loop == True):
         print("=" * 25)
@@ -64,9 +70,13 @@ def main():
                             print("USER HOME PAGE")
                             print("1. Menyewa Kendaraan")
                             print("2. Data Kendaraan")
-                            print("3. Logout")
-                            tanya = int(input("Fitur nomor (1/2/3) = "))
+                            print("3. Survey")
+                            print("4. Logout")
+                            tanya = int(input("Fitur nomor (1/2/3/4) = "))
                             if (tanya == 1):
+                                print("=" * 25)
+                                print("MENYEWA KENDARAAN")
+                                print("=" * 25)
                                 license_plate = str(input("License Plate = "))
 
                                 tersedia = False
@@ -119,6 +129,20 @@ def main():
                                 datab.print_data_vechile()
 
                             elif (tanya == 3):
+                                print("=" * 25)
+                                print("SURVEY")
+                                print("=" * 25)
+
+                                rate = str(input("Rate program dari 1-10 = "))
+                                testimoni = str(input("Testimoni = "))
+
+                                new_survey = Survey(users[count_user].name, rate, testimoni)
+
+                                surveys.append(new_survey)
+                                with open(survey_database, 'wb') as data:
+                                    pickle.dump(surveys, data, pickle.HIGHEST_PROTOCOL)
+
+                            elif (tanya == 4):
                                 login_user = False
 
                     else:
@@ -140,8 +164,9 @@ def main():
                             print("2. Database Kendaraan")
                             print("3. Menambah Kendaraan")
                             print("4. History Rental")
-                            print("5. Logout")
-                            tanya = int(input("Fitur nomor (1/2/3/4/5) = "))
+                            print("5. Database Survey")
+                            print("6. Logout")
+                            tanya = int(input("Fitur nomor (1/2/3/4/5/6) = "))
                             if (tanya == 1):
                                 print("=" * 25)
                                 print("MENAMPILKAN DATA USER")
@@ -191,6 +216,12 @@ def main():
                                 datab.print_rental_history()
 
                             elif (tanya == 5):
+                                print("=" * 25)
+                                print("MENAMPILKAN HISTORY SURVEY")
+                                print("=" * 25)
+                                datab.print_data_survey()
+
+                            elif (tanya == 6):
                                 login_admin = False
                     else:
                         print("=" * 25)
