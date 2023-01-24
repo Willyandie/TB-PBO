@@ -1,21 +1,19 @@
-# import pickle
-
 class User:
     __identity_number: str
     __name: str
     __email: str
     __password: str
     __gender: str
-    __addres: str
+    __address: str
     __phone_no: str
 
-    def __init__(self, identity_number, name, email, password, gender, addres, phone_no):
+    def __init__(self, identity_number, name, email, password, gender, address, phone_no):
         self.__identity_number = identity_number
         self.__name = name
         self.__email = email
         self.__password = password
         self.__gender = gender
-        self.__addres = addres
+        self.__address = address
         self.__phone_no = phone_no
 
     @property
@@ -59,12 +57,12 @@ class User:
         self.__gender = value
 
     @property
-    def addres(self):
-        return self.__addres
+    def address(self):
+        return self.__address
 
-    @addres.setter
-    def addres(self, value):
-        self.__addres = value
+    @address.setter
+    def address(self, value):
+        self.__address = value
 
     @property
     def phone_no(self):

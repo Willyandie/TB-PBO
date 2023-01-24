@@ -2,7 +2,7 @@ class Rental:
     __name: str
     __vehicle_type: str
     __price: int
-
+    
     def __init__(self, name, vehicle_type, price):
         self.__name = name
         self.__vehicle_type = vehicle_type

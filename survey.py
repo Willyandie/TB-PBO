@@ -1,12 +1,12 @@
 class Survey:
     __name: str
     __rate: str
-    __testimoni: str
+    __testimony: str
 
-    def __init__(self, name, rate, testimoni):
+    def __init__(self, name, rate, testimony):
         self.__name = name
         self.__rate = rate
-        self.__testimoni = testimoni
+        self.__testimony = testimony
 
     @property
     def name(self):
@@ -25,9 +25,9 @@ class Survey:
         self.__rate = value
 
     @property
-    def testimoni(self):
-        return self.__testimoni
+    def testimony(self):
+        return self.__testimony
     
-    @testimoni.setter
-    def testimoni(self, value):
-        self.__testimoni = value
+    @testimony.setter
+    def testimony(self, value):
+        self.__testimony = value
